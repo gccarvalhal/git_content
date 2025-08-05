@@ -1,0 +1,59 @@
+#### INTERMEDIATE GIT ####
+
+1. Branches
+2. Remotes
+3. Conflicts
+
+
+1. BRANCHES 
+
+- 'Branches' = an individual version of a repo
+- Git uses branches to systematically track multiple versions of files
+- In each branch:
+    - Some files might be the same
+    - Other might be different
+    - Some may not exist at all
+
+ - !!!!! Every repo has a branch called ## main ##
+ - Branch is a part of the main system (focused in something critial)
+
+ Why use branches?
+
+ - Multiple developer can work on a project simultaneously
+ - Compare the state of a repo between branches
+ - Combine contents, pushing new features to a live system
+ - Each branch should have a specific purpose
+
+### 'git branch'
+- listing all branches
+- create a new branch as well
+- * (current branch)
+
+### 'git switch (branch name)'
+- move between branches
+
+Exemple:
+1. git branch speed-test (create a new branch called speed-test)
+2. git switch speed-test (move to the speed-test branch)
+or you can do both
+- git switch - c speed-test (create a new branch called speed-test and switch to it)
+
+
+obs: 
+- creating a new branch = "branching off"
+- creating 'speed-test' from main = "branching off main"
+
+
+### Modifying and comparing branches
+
+- git diff (can also compare two branches)
+
+"git diff main summary-statistics"
+- it is comparing main with the summary-statistics
+
+- Navigating large git outputs
+    - "space" to process through and q to exit
+
+
+### Rename and delete branches
+- git branch
