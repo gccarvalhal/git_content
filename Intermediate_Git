@@ -104,3 +104,23 @@ git branch -D (branch name) -- delete a branch that has not been merged
 - When merging 'ai-assistant' into 'main':
     ai-assistant = source
     main = destination
+
+## Merging branches
+1. Move to the destination branch:
+    git switch main
+2. git merge 'branch name'
+3. From main, to merge 'ai-assistant' into main
+    - git merge 'ai-assistant'
+
+4. from another branch: git merge source destination
+ - ex: git merge 'ai-assistant' 'main'
+
+Images:
+1. Parent_Commits
+2. Type_of_Merge
+    - 'Fast-Foward': linnear commit history - branched off main to create ai-assistant
+    - There other types of merges
+3. Number_of_lines_changes
+4. Files modified: A new file has been added
+
+
