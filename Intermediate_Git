@@ -68,3 +68,4 @@ git diff report.md ## Show changes between an unstaged file and the latest commi
 git diff --staged  ## Show changes between all staged files and the latest commit
 git diff (hash 1) (has 2) ## Show changes between two commits using hashes
 git diff HEAD~1 HEAD~2 ##Show changes between two commits using HEAD instead of commit hashes
+
