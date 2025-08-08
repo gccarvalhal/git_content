@@ -84,3 +84,25 @@ git branch -m (old name) (new name)
 # Delete branch
 git branch -d (branch name) -- delete a branch, which has been merged
 git branch -D (branch name) -- delete a branch that has not been merged
+
+# The purpose of branches
+
+- Each branch should have a particular purpose
+    1. Developing a new feature
+    2. Debugging an error
+
+- Once the task is complete, we incorporate the changes into production
+    1. Typically the 'main' branch - "ground truth"
+
+
+# MERGE: Source & Destination
+- When merging two branches:
+- The last commits from each branch are called 'parent commits'
+    1. source: the branch we want to merge FROM
+    2. destination: the branch we want to merge INTO
+
+- When merging 'ai-assistant' into 'main':
+    ai-assistant = source
+    main = destination
+
+
