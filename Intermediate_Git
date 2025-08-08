@@ -58,5 +58,11 @@ obs:
 ### Rename and delete branches
 - git branch
 
-------------
-------------
+
+### Modifying and comparing branches
+
+# Diff recap
+
+git diff  ## Show changes between all unstaged files and the latest commit
+git diff report.md ##Show changes between an unstaged file and the latest commit
+git diff 
