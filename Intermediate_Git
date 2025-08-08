@@ -69,4 +69,18 @@ git diff --staged  ## Show changes between all staged files and the latest commi
 git diff (hash 1) (has 2) ## Show changes between two commits using hashes
 git diff HEAD~1 HEAD~2 ##Show changes between two commits using HEAD instead of commit hashes
 
-Santos
+## Compare branches
+git diff main (name-branch)
+
+## Navigating large git outputs
+
+- Can produce large outputs
+- 'space' to progress through
+- 'q' to exit
+
+# Rename branch
+git branch -m (old name) (new name)
+
+# Delete branch
+git branch -d (branch name) -- delete a branch, which has been merged
+git branch -D (branch name) -- delete a branch that has not been merged
