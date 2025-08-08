@@ -104,5 +104,3 @@ git branch -D (branch name) -- delete a branch that has not been merged
 - When merging 'ai-assistant' into 'main':
     ai-assistant = source
     main = destination
-
-
