@@ -170,3 +170,104 @@ You also practiced merging branches and learned the importance of creating speci
 
 !!!! Avoid editing the same file in multiple branches
 
+
+# INTRODUCTION TO REMOTE
+
+Why use remote reops?
+ - Everything is backed up
+ - Collaboration, regardless of location
+
+
+# Cloning a repo (local)
+- Repo copies on our local computer = local remotes
+
+1. Making copies = cloning
+git clone path-to-project-repo
+
+2. Cloning a local project
+git clone /home/george/repo
+
+3. Cloning and naming a local project
+git clone /home/george/repo new_repo
+
+# Cloning a remote
+- remote repos are generallly stored in an online hosting service
+Ex: GitHub, Bitbucket or GitLab
+
+If we have an account:
+- We can cline a remote repo on to our local computer
+
+git clone URL
+git clone https://github.com/datacamp/project
+
+
+# Identifying a remote
+
+- When cloning a repo
+    - Git remembers where the original was
+
+- Git stores a remote 'tag' in the new repo's configuration
+
+- List all remotes associated with the repo
+git remote (list all the remote connections)
+git remote -v (v is verbose - get more ingormastion about the remote)
+
+# Creating a remote
+- When cloning, Git will automatically name the remote 'origin'
+
+- -> git remote add name URL
+
+name = name of the remote repo
+URL = path to the directory
+
+Create a remote called 'george' and it is the same as 'origin'
+- -> git remote add georme https://github.com/george_datacamp/repo
+
+Defining a remote names is useful for mearging
+
+# Pulling from remotes
+
+- Remote vs Local
+
+# Fetching from a remote
+- Synchronize the file in a remote to a local repo we need to fetch branches from the remote
+- Fetch from the 'origin' remote
+
+git fetch origin
+
+- it fetches all branches from the remote into the local repo
+- Might create new local branches if they only existed in the remote
+- Does not merge the remote's contents into local repo
+
+- fetch only the origin remote's main branch
+
+git fetch origin main
+
+- it will fetch from remote to local the main branch (HEAD or last commit)
+
+
+# Synchronizing content
+
+- merge 'origin' remote's default branch (main) into the local repo's current branch
+- If you are already connected to remote, it will just upload the niew version of the main version file
+
+git merge origin
+
+
+# Pulling from a remote
+
+- pull, fetch and merge at the same time
+- fetch and merge from the remote's default (main) into the local repo's current branch
+
+git pull origin (branch name if you want to select)
+
+
+!!!! If you do changes on files and do not commit it. If you try to pull, it wont work. Git will recommend to 
+save and commit your files, before pulling repo from remote. Save locally before pulling from a remote.
+
+
+
+
+
+
+
