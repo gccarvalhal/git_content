@@ -11,6 +11,7 @@
 3. checkout
 4. merge
 5. clone 
-6. fetch
-7. pull
-8. push
+6. remote
+7. fetch
+8. pull
+9. push
