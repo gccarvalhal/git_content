@@ -266,6 +266,38 @@ git pull origin (branch name if you want to select)
 save and commit your files, before pulling repo from remote. Save locally before pulling from a remote.
 
 
+# Pushing to remotes
+
+- Pull: Fetch and Merge (bring from remote)
+- Push: Merge local's repo content into remote
+- Before pushing, we must save changes !!
+
+git push REMOTE(origin) LOCA_BRANCH(main branch of a file)
+
+"Push into remote from local_branch"
+
+Push changes into 'origin' from the local repo's main branch
+
+git push origin main
+
+
+# Workflow
+
+1. Pull data from remote to local
+2. Make changes in main or new branches
+3. Save all content, commit changes
+4. Push to remote
+
+git pull --no-edit origin main
+(not recommended, unless we are very confident in the history of our project !!)
+
+
+!!! Pushing a new local branch
+
+1. Working in 'hotfix' branch locally
+2. 'hotfix' does not exist in the remote
+
+git push origin hotfox -- it will upload a new branch of the main file
 
 
 
