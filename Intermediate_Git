@@ -124,3 +124,49 @@ Images:
 4. Files modified: A new file has been added
 
 
+## Recap
+You learned about merging branches in Git, which is essential for integrating changes from different branches into the main branch. Here's a summary of the key points:
+
+Purpose of Branches: Each branch should have a specific purpose, such as developing a new feature or fixing a bug.
+Merging Process:
+
+Source and Destination: The source branch is the one you merge from, and the destination branch is the one you merge into.
+Switch to Destination: First, switch to the destination branch using git checkout main.
+
+Merge Command: Use git merge source-branch to merge the source branch into the destination branch.
+
+# Example of merging ai-assistant into main
+git checkout main
+git merge ai-assistant
+
+Merge Output: The output shows commit hashes, type of merge (e.g., fast-forward), and changes made (lines added/deleted, new files created).
+
+You also practiced merging branches and learned the importance of creating specific branches for different tasks and deleting them once their purpose is fulfilled.
+
+# Merge Conflicts 
+
+- Inability to resolve differences in the contents of one or more files between branches
+- Edit the same file in two branches
+- Try to merge
+- Output: Git does not know what version to keep
+
+
+# Resolving Conflict
+- Delete >>>>>>> and <<<<<<<
+- SAVE: CTRL + O ; (not CTRL + 0), then ENTER
+- EXIT: CTRL + X
+
+##### WORKFLOW
+
+1. Add to staging area
+
+-- git add (file)
+
+2. Commit to out current branch
+-- git commit -m "Resolving README.md conflict"
+
+3. Merge the branch to main 
+-- git merge documentation
+
+!!!! Avoid editing the same file in multiple branches
+
