@@ -28,7 +28,7 @@ git config --global user.name (it will print the name)
 git config --global user.email "YOUR EMAIL"
 git config --global user.name (it will print the email)
 
-## Initialize
+## Git workflow
 
 . git init  (Initialize git)
 . git status (Understand status of the files)
