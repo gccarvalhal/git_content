@@ -28,3 +28,10 @@ git config --global user.name (it will print the name)
 git config --global user.email "YOUR EMAIL"
 git config --global user.name (it will print the email)
 
+## Initialize
+
+. git init  (Initialize git)
+. git status (Understand status of the files)
+. git add <file name>  OR git add . (add all files)
+. git commit -m "your version comment // message"
+. git remote add orgin <HTTPS> or <SSH>
