@@ -1,0 +1,313 @@
+GIT
+- popular version control system for software development and data projects
+- open source
+- scalable
+
+What is version control?
+- Processes and systems to manage changes to files, programs and directories
+
+What should be version controlled?
+- Version control is useful for anything that:
+1. changes over time
+2. needs to be shared
+
+What can version control do?
+1. track files in different states
+2. combine different version of files
+3. identify a particular version
+4. revert changes
+
+Benefits of Git 
+- git stores everything, so nothing is lost
+- We can compare files at different times
+- see what changes were made, by who and when
+- revert to previous versions of files
+
+Using Git
+- git commands are run on the shell, also known as the terminal
+
+The shell:
+- is a program for executing commands
+- can be used to easily preview or inspect files and directories
+Directory = folder
+
+Useful terminal commands:
+pwd = prints the actual directory 
+ls = what is in our directory
+cd = change directory
+git --version
+
+------------------------------------------------------------------------------------
+
+CREATING REPOS
+
+What is a Git repo?
+
+- Git repo = directory containing files and sub-directories
+- .git is the git repository that contain all the extra info of versions
+- DO NOT EDIT .git !!!!!
+
+
+Why make a repo?
+
+- systematically track version
+- revert to previous versions
+- compare versions at different points in time
+- collaborate with colleagues
+
+
+'git init': create a new git repo for our project
+-- git init my_first_git_project
+-- just git init inside a directory willcreate a git repo in a existing directory
+
+'cd my_first_git_project': change to this new repo
+
+'git status': give the status of the project
+- git recognized that are files not bein tracked 
+- DO NOT CREATE A GIT REPO INSIDE ANOTHER GIT REPO (known as nested repos)
+- There will be two -git directories. Thus, git get confused about which directory it needs update
+
+------------------------------------------------------------------------------------
+
+STAGING AND COMMITING files
+
+The git workflow
+1. Edit and save files on our computer
+2. Add the files to the Git stating area
+    - track what has been modified
+
+3. Commit the files
+    - save the version of the file
+    - git takes a snapshot of the files at the point in time
+    - allow us to compare and revert files
+
+Staging area: you can make n changes in the file
+Commit: you cannot make any changes in the file
+
+
+ADD
+
+- add a file to the stage areas
+
+"git add README.md"
+
+- add all modified files
+
+"git add ."
+"." all files in the current directory and sub-directories
+
+Adding a file to the staging area
+The staging area is used by Git to track changes to files within your current directory and sub-directories.
+
+You've created a report.md file for your mental health project. In this exercise, you'll add this file to the staging area.
+
+
+COMMIT
+
+git commit -m "Adding a README."
+-m "allows a log message without opening a text editor"
+
+
+
+Exemple:
+
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   data/mental_health_survey.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        report.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+------------------------ Revision ------------------------
+
+--> Staging Area: This is where Git tracks modified files before they are committed. 
+Think of it as placing a letter in an envelope.
+
+--> Committing Files: Making a commit in Git is like putting the envelope in a mailbox. 
+It saves a snapshot of your files at that point in time.
+
+Commands:
+Adding a File to the Staging Area:
+
+'git add report.md'
+This command adds report.md to the staging area.
+
+Adding All Modified Files:
+
+'git add .'
+This command stages all modified files in the current directory and sub-directories.
+
+Committing Files:
+
+'git commit -m "Your log message here"'
+This command commits the staged files with a log message.
+
+You also learned the importance of concise log messages for future reference.
+
+----------------------------------------------------------------
+
+THE COMMIT STRUCTURE
+
+Git commits have three parts:
+
+1. Commit
+- contains the metadata - author, log message, commit time
+
+2. Tree
+- tracks the names and location of files and directories in the repo
+- like a directory - mapping keys to files/directories
+
+3. Blob
+- Binary Large Object
+- may contain data of any kind
+- a compressed snapshot of a file's contents
+
+
+HASH:
+
+- 40-caracter string of numbers and letters
+- pseudo-random number generator-hash function
+
+Hashes allow data sharing between repos
+- If two files are the same
+  - then their hashes are the same
+- If not there will get different hash (not sharing data)
+
+- Git only needs to compare hashes
+
+
+Git log
+- 'git log'
+- show commits from newest to oldest
+ 
+ ´space' show more recent commits
+ 'q' to quit the log and return to the terminal
+
+
+
+ ----------------------------------------------------------------
+
+ VERSION HISTORY (tips and tricks)
+
+NUMBER OF COMMITS
+ - restrict the number of commits to visualize
+ - using '-' we can restrict the number of commits displayed
+ - 'git log -3' show the 3 most recent commits
+
+FILE 
+- to only look at the commit history of one file
+'git log report.md'
+
+
+Exemple: see the last two commits of a file
+
+cd <folder>
+git log -2 <file>
+
+
+CUSTOMIZING THE DATE RANGE
+
+- restrict 'git log' ny date 
+
+git log --since='Month Day Year'
+
+month = tree letter abbreviation
+day = one or two digits
+year = four digits
+
+- since 02/02/2024
+git log --since='Apr 2 2024'
+
+- between 2nd and 11th april
+git log  --since='Apr 2 2024' --until='Apr 11 2024'
+
+FINDING A PARTICULAR COMMIT
+'git log'
+
+- only need the first 8-10 characters of the 'hash'
+'git show <first 8 or 10 characters of the hash are enough to be unique >'
+
+
+COMPARING VERSIONS 
+
+git diff - difference between versions
+
+Compare last committed version with latest version NOT IN the staging area
+- git diff report.md
+
+
+COMPARING VERSIONS (staged file)
+
+- add 'report.md' to the staging are
+git add report.md
+
+- compare last committed version of report.md with the version in the staging area
+git diff --staged report.md
+
+'git diff --staged': compare all staged files to versions in the last commit.
+git diff --staged
+
+COMPARING TWO COMMITS
+1. find the commit hashes
+ git log
+
+2.compare them
+ git diff 3423423 23423423
+
+- it will show what changes from first hash to second hash
+- put most recent hash second
+
+State in the last commit "HEAD"
+
+Compare second most recent with the most recent commit
+ git diff HEAD~1 HEAD
+
+----------------------------------------------------------------
+
+RESTORING AND REVERTING Files
+
+- restoring a repo to the state prior to the previous commit
+- 'git revert'
+
+ reinstates previous versions and makes a commit
+ restores all files updated in the given commit
+ 2334r23,fwed2344, executing
+ HEAD, HEAD~1, etc 
+
+
+ Save 'CTRL + O' THEN enter
+ Exit 'CTRL + X'
+
+git revert --no-edit HEAD (avoid opening the text editor)
+- revert without commiting (bring previous files to staging)
+
+git revert -n HEAD
+'-n' means no commit
+
+!!!! git revert work on commits, not individual files
+
+To revert a single file: Again using HEAD or the commit hash
+
+'git checkout'
+'git checkout HEAD~1 -- REPORT.MD' reverto to the last previous file in the report.md 
+
+UNSTAGING A SINGLE FILE
+
+- to unstage a single file:
+git restore --staged summary_statistics.csv
+
+-edit the file
+git add summary_statistics.csv (add to repo)
+git commit -m "Addingd age summary statistics" (commit file changes)
+
+
+git restore --staged (all the staging files will return to the repo)
+
+
+
+

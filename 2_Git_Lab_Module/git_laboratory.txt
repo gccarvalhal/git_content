@@ -1,0 +1,91 @@
+##  What is Git ?
+
+• it is a Version Control System (VCS) designed to make it
+easier to have multiple versions of a code base,
+sometimes across multiple developers or teams
+
+## What is Github ?
+
+• Github.com is a website that hosts git repositories on a
+remote server
+
+• Hosting repositories on Github facilitates the sharing of
+codebases among teams by providing a GUI to easily fork or
+clone repos to a local machine
+• By pushing your repositories to Github, you will pretty much
+automatically create your own developer portfolio as well!
+
+
+## Configuring Git
+
+• Your commits will have your name and email attached to them.
+
+• ADD name
+git config --global user.name "YOUR NAME"
+git config --global user.name (it will print the name)
+
+• ADD email
+git config --global user.email "YOUR EMAIL"
+git config --global user.name (it will print the email)
+
+## Git workflow
+
+. git init  (Initialize git)
+. git status (Understand status of the files)
+. git add <file name>  OR git add . (add all files)
+. git commit -m "your version comment // message"
+. git remote add orgin <HTTPS> or <SSH>
+. git merge (merge branchs)
+. git fetch (bring merged branches)
+. git pull (merge + fetch to local repo)
+. git push (upload content to cloud repo)
+. git closes <issue number>
+
+## Git branching
+
+. git branch (view current branches in repo)
+. git checkout -b <branch name> (create a new branch with the provided name, and switch to this one)
+. git checkout <branch name> without '-b' flag to switch to existing branches. Just switch to an existing branch. 
+
+
+## Merging & Rebasing
+
+. git merge: integrate changes from one branch into another branch
+. git rebase: rebase to the actual version of that file
+
+####### Merging
+Example: Pros of merging
+     - git checkout feature (switch to branch feature)
+     - git merge master (it will merge feature into master)
+
+     or
+
+     - git merge feature master (merge feature into master) -- one command line
+
+
+Example: Cons of merging
+
+can lead to muddling the history of your branch,thereby making it more diﬃcult for yourself or other
+developers to track the history of changes using `git log` and/or roll back to previous states.
+
+
+####### Rebase
+
+to rebase, you would 'git checkout feature' and then 'git rebase master'
+
+-- rebase will move the entire feature branch to start from the tip of the master
+branch by rewritting the project history and creating brand new commits for each 
+commit in the original branch. Leading to a singular history with no forking of 
+the commit history.
+
+• Because rebase rewrites project history, you lose the
+context provided by a merge commit, i.e. you won’t be able
+to see when upstream changes were actually integrated into
+the feature branch.
+• More importantly, you could potentially cause extreme
+diﬃculty by rebasing master to the tip of your feature
+branch, leading git to think that your master branch’s history
+has diverged from the rest
+• In doing so, everyone else would still be working from the
+original master branch, and both masters would need to be
+merged together.
