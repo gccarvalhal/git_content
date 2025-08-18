@@ -89,3 +89,7 @@ has diverged from the rest
 • In doing so, everyone else would still be working from the
 original master branch, and both masters would need to be
 merged together.
+
+
+## HEAD: Special pointer used by Git that defines which is the current branch. The asterisk in the output
+of the second command also represents the 'HEAD'.
